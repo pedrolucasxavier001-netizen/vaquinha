@@ -25,11 +25,15 @@
             <div class="campaign-header">
                 <img id="campaignImage" src="" alt="Imagem da Vaquinha" class="campaign-image-large">
                 <div class="campaign-info">
-                    <h1 id="campaignTitle"></h1>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <h1 id="campaignTitle" style="margin: 0;"></h1>
+                        <span id="verifiedBadge" style="background: #10b981; color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.85rem; font-weight: bold; display: none;">✓ Verificado</span>
+                    </div>
                     <div class="campaign-meta">
                         <span id="campaignCategory" class="badge"></span>
-                        <span id="campaignOrganizer" class="organizer"></span>
+                        <span id="ratingBadge" style="margin-left: 1rem;"></span>
                     </div>
+                    <p id="campaignOrganizer" class="organizer" style="margin-top: 1rem;"></p>
                 </div>
             </div>
 
@@ -37,6 +41,11 @@
                 <div class="main-content">
                     <h2>Sobre esta Vaquinha</h2>
                     <p id="campaignDescription"></p>
+
+                    <div id="updatesSection" style="background: #f0f9ff; padding: 1.5rem; border-radius: 1rem; margin: 2rem 0; display: none;">
+                        <h3 style="color: #0284c7; margin-top: 0;">📰 Atualizações</h3>
+                        <div id="updatesList"></div>
+                    </div>
 
                     <h2>Progresso da Arrecadação</h2>
                     <div class="progress-container">
@@ -81,9 +90,24 @@
                     <div id="supporters-list" class="supporters-list">
                         <!-- Apoiadores serão listados aqui -->
                     </div>
+
+                    <div id="commentsSection" style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e5e7eb;">
+                        <h2>Comentários e Apoio</h2>
+                        <div id="commentsList" style="display: grid; gap: 1rem;"></div>
+                    </div>
                 </div>
 
                 <aside class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>✓ Verificado</h3>
+                        <p style="font-size: 0.9rem; color: #6b7280; margin: 0;">Esta campanha passou por verificação rigorosa</p>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>⭐ Reputação</h3>
+                        <div id="reputationInfo" style="font-size: 0.95rem;"></div>
+                    </div>
+
                     <div class="sidebar-card">
                         <h3>Informações</h3>
                         <div class="info-item">
@@ -97,6 +121,10 @@
                         <div class="info-item">
                             <strong>Categoria:</strong>
                             <p id="categoryName"></p>
+                        </div>
+                        <div class="info-item">
+                            <strong>Visualizações:</strong>
+                            <p id="viewsCount">-</p>
                         </div>
                     </div>
 

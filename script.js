@@ -1,6 +1,79 @@
 // Dados das campanhas (simulado com localStorage)
 const STORAGE_KEY = 'vaquinhas_campaigns';
 
+// Adicionar data de verificação e ratings
+const campaignMetadata = {
+    1: { verified: true, rating: 4.8, updates: 3, views: 1250 },
+    2: { verified: true, rating: 4.9, updates: 2, views: 2840 },
+    3: { verified: true, rating: 4.7, updates: 5, views: 1890 },
+    4: { verified: true, rating: 4.9, updates: 4, views: 3120 },
+    5: { verified: true, rating: 4.6, updates: 2, views: 980 },
+    6: { verified: true, rating: 4.8, updates: 3, views: 2150 },
+    7: { verified: true, rating: 4.7, updates: 6, views: 1450 }
+};
+
+// Comentários de exemplo
+const sampleComments = {
+    1: [
+        { author: "Ana Silva", text: "Que iniciativa linda! Desejo sucesso ao João.", date: "2024-07-19", helpful: 12 },
+        { author: "Márcia Costa", text: "Compartilhei com meu grupo de amigas. Vamos ajudar!", date: "2024-07-18", helpful: 8 }
+    ],
+    2: [
+        { author: "Professor João", text: "Carlos é um aluno excelente! Merece essa oportunidade.", date: "2024-07-19", helpful: 25 },
+        { author: "Diretor da Escola", text: "Sempre apoio alunos dedicados como o Carlos.", date: "2024-07-18", helpful: 18 }
+    ],
+    3: [
+        { author: "Vizinho Pedro", text: "Rosana é uma mãe guerreira. Vamos junto!", date: "2024-07-19", helpful: 15 },
+        { author: "Socorrista", text: "Sua casa precisa de reparos urgentes mesmo. Boa sorte!", date: "2024-07-17", helpful: 11 }
+    ],
+    4: [
+        { author: "Dr. Cardoso", text: "Esse tomógrafo vai salvar muitas vidas na comunidade.", date: "2024-07-19", helpful: 32 },
+        { author: "Paciente", text: "Finalmente teremos acesso a esse tipo de exame!", date: "2024-07-18", helpful: 28 }
+    ],
+    5: [
+        { author: "Mãe da Sofia", text: "Minha filha merece essa oportunidade de ouro!", date: "2024-07-19", helpful: 20 },
+        { author: "Professora de Inglês", text: "Sofia é dedicada e vai se sair muito bem!", date: "2024-07-17", helpful: 14 }
+    ],
+    6: [
+        { author: "Fono Silvia", text: "Joaquim vai recobrar sua qualidade de vida!", date: "2024-07-18", helpful: 16 },
+        { author: "Neto", text: "Vovô merece poder nos ouvir bem!", date: "2024-07-16", helpful: 22 }
+    ],
+    7: [
+        { author: "Mestre de Artes", text: "Essa ONG faz um trabalho incrível com as crianças.", date: "2024-07-19", helpful: 40 },
+        { author: "Voluntário", text: "Já trabalhei com eles. Empresa séria, gosto muito!", date: "2024-07-18", helpful: 35 }
+    ]
+};
+
+// Atualizações de campanha
+const campaignUpdates = {
+    1: [
+        { title: "Cirurgia marcada para próxima semana!", date: "2024-07-15", content: "Conseguimos aprovar a cirurgia com médico renomado. João está animado e confiante!" },
+        { title: "Obrigado pelo apoio!", date: "2024-07-10", content: "Já passamos de 50% da meta! A família inteira quer agradecer por cada um que está ajudando." }
+    ],
+    2: [
+        { title: "Preparando documentação para mudança", date: "2024-07-18", content: "Já consegui a aprovação do dorm e estou organizando toda documentação necessária." },
+        { title: "Resultado ENEM confirmado!", date: "2024-07-05", content: "Passei no ENEM e fui aprovado na UFRJ! Agora é hora de arrecadar para começar essa nova jornada." }
+    ],
+    3: [
+        { title: "Engenheiro avaliou os danos", date: "2024-07-17", content: "O engenheiro confirmou que a estrutura está comprometida. Precisamos agir rápido!" },
+        { title: "Cotação de reparos recebida", date: "2024-07-12", content: "Já temos 3 orçamentos de construtores. O mais barato e confiável é de R$ 12.500." }
+    ],
+    4: [
+        { title: "Tomógrafo chegando em agosto!", date: "2024-07-16", content: "Confirmamos a entrega do equipamento. Equipe de técnicos já está agendada para instalação." },
+        { title: "Prefeitura aprova investimento", date: "2024-07-08", content: "A prefeitura se comprometeu em doar R$ 15 mil. Precisamos dos R$ 20 mil restantes!" }
+    ],
+    5: [
+        { title: "Já tenho meu visto aprovado!", date: "2024-07-14", content: "Visto para a Irlanda foi aprovado! Falta apenas arrecadar o restante para viajar em setembro." }
+    ],
+    6: [
+        { title: "Fonoaudióloga recomenda urgência", date: "2024-07-19", content: "A especialista confirmou que a prótese é essencial para sua saúde auditiva e qualidade de vida." }
+    ],
+    7: [
+        { title: "Novo espaço já está alugado!", date: "2024-07-18", content: "Conseguimos um local maior e melhor para as oficinas. Agora precisamos dos materiais!" },
+        { title: "Professores de arte já estão confirmados", date: "2024-07-10", content: "Contratamos 2 mestres em artes plásticas com experiência em educação comunitária." }
+    ]
+};
+
 // SVGs para cada categoria
 const categoryIcons = {
     saude: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect fill="#ff6b6b" width="100" height="100"/><g fill="white"><path d="M50 20c-16.5 0-30 13.5-30 30s13.5 30 30 30 30-13.5 30-30-13.5-30-30-30zm0 50c-11 0-20-9-20-20s9-20 20-20 20 9 20 20-9 20-20 20z"/><rect x="47" y="35" width="6" height="30" fill="white"/><rect x="35" y="47" width="30" height="6" fill="white"/></g></svg>',
@@ -330,6 +403,12 @@ const categoryNames = {
 function createCampaignCard(campaign) {
     const percentage = getPercentage(campaign.currentAmount, campaign.targetAmount);
     const daysLeft = getDaysRemaining(campaign.deadline);
+    const metadata = campaignMetadata[campaign.id] || { verified: true, rating: 4.7, updates: 2, views: 0 };
+    
+    // Calcular velocidade de captação (dias para atingir 50% do goal)
+    const captationDays = Math.max(1, getDaysRemaining(campaign.createdDate) - getDaysRemaining(campaign.deadline));
+    const dailyRate = campaign.currentAmount / Math.max(1, captationDays);
+    const pace = dailyRate > 0 ? '⚡ Rápido' : '• Normal';
     
     const card = document.createElement('div');
     card.className = 'campaign-card';
@@ -344,7 +423,11 @@ function createCampaignCard(campaign) {
         <div class="campaign-body">
             <h3 class="campaign-title">${campaign.title}</h3>
             <p class="campaign-description">${campaign.description.substring(0, 80)}...</p>
-            <span class="campaign-category">${categoryNames[campaign.category]}</span>
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                <span class="campaign-category">${categoryNames[campaign.category]}</span>
+                <span style="font-size: 0.8rem; color: #f59e0b; font-weight: bold;">⭐ ${metadata.rating}</span>
+                ${percentage >= 80 ? '<span style="font-size: 0.8rem; color: #10b981; background: #d1fae5; padding: 0.3rem 0.8rem; border-radius: 2rem; font-weight: bold;">🎯 Próximo a vencer</span>' : ''}
+            </div>
             <div class="campaign-progress">
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: ${percentage}%"></div>
@@ -354,10 +437,12 @@ function createCampaignCard(campaign) {
                     <span class="target-amount">de ${formatBRL(campaign.targetAmount)}</span>
                 </div>
             </div>
-            <div style="font-size: 0.9rem; color: #6b7280;">
-                ${campaign.supporters.length} apoiadores • ${daysLeft > 0 ? daysLeft + ' dias' : 'Finalizado'}
+            <div style="font-size: 0.9rem; color: #6b7280; margin-bottom: 0.8rem;">
+                <div>${percentage}% arrecadado</div>
+                <div>${campaign.supporters.length} apoiadores • ${daysLeft > 0 ? daysLeft + ' dias' : '⏱️ Finalizado'}</div>
+                <div style="font-size: 0.8rem; color: #9ca3af; margin-top: 0.3rem;">👁️ ${metadata.views} visualizações</div>
             </div>
-            <p class="campaign-organizer">por ${campaign.organizer}</p>
+            <p class="campaign-organizer">por <strong>${campaign.organizer}</strong></p>
         </div>
     `;
     
@@ -470,6 +555,7 @@ function loadCampaignDetails() {
     }
     
     const campaign = getCampaignById(campaignId);
+    const metadata = campaignMetadata[campaign.id] || { verified: true, rating: 4.7, updates: 2, views: 0 };
     
     if (!campaign) {
         alert('Campanha não encontrada');
@@ -483,6 +569,14 @@ function loadCampaignDetails() {
     // Preencher informações
     document.getElementById('campaignTitle').textContent = campaign.title;
     
+    // Mostrar badge de verificação
+    if (metadata.verified) {
+        document.getElementById('verifiedBadge').style.display = 'inline-block';
+    }
+    
+    // Mostrar rating
+    document.getElementById('ratingBadge').innerHTML = `<strong>⭐ ${metadata.rating}</strong> (${sampleComments[campaign.id]?.length || 0} avaliações)`;
+    
     // Adicionar foto/imagem SVG
     const campaignImageElement = document.getElementById('campaignImage');
     if (campaign.photo) {
@@ -491,7 +585,6 @@ function loadCampaignDetails() {
         campaignImageElement.style.minHeight = '350px';
         campaignImageElement.style.borderRadius = '1rem';
     } else {
-        // Fallback para ícone da categoria se não tiver foto
         const svgIcon = categoryIcons[campaign.category] || categoryIcons.outro;
         campaignImageElement.innerHTML = svgIcon;
         campaignImageElement.style.width = '100%';
@@ -501,7 +594,7 @@ function loadCampaignDetails() {
     
     document.getElementById('campaignDescription').textContent = campaign.description;
     document.getElementById('campaignCategory').textContent = categoryNames[campaign.category];
-    document.getElementById('campaignOrganizer').textContent = `por ${campaign.organizer}`;
+    document.getElementById('campaignOrganizer').textContent = `👤 por ${campaign.organizer} • Email: ${campaign.email}`;
     
     document.getElementById('currentAmount').textContent = campaign.currentAmount.toFixed(2);
     document.getElementById('targetAmount').textContent = campaign.targetAmount.toFixed(2);
@@ -513,6 +606,40 @@ function loadCampaignDetails() {
     document.getElementById('deadlineDate').textContent = new Date(campaign.deadline).toLocaleDateString('pt-BR');
     document.getElementById('creatorName').textContent = campaign.organizer;
     document.getElementById('categoryName').textContent = categoryNames[campaign.category];
+    document.getElementById('viewsCount').textContent = metadata.views + ' visualizações';
+    
+    // Carregar reputação
+    const reputationHTML = `
+        <div style="margin: 0.5rem 0;">
+            <div style="font-size: 1.3rem;">⭐ ${metadata.rating}</div>
+            <div style="color: #6b7280; font-size: 0.85rem;">
+                ${sampleComments[campaign.id]?.length || 0} comentários positivos
+            </div>
+        </div>
+    `;
+    const reputationElem = document.getElementById('reputationInfo');
+    if (reputationElem) {
+        reputationElem.innerHTML = reputationHTML;
+    }
+    
+    // Carregar atualizações
+    const updates = campaignUpdates[campaign.id] || [];
+    if (updates.length > 0) {
+        const updatesSection = document.getElementById('updatesSection');
+        updatesSection.style.display = 'block';
+        const updatesList = document.getElementById('updatesList');
+        updatesList.innerHTML = '';
+        updates.forEach(update => {
+            const div = document.createElement('div');
+            div.style.marginBottom = '1rem';
+            div.innerHTML = `
+                <div style="font-weight: bold; color: #0284c7;">${update.title}</div>
+                <div style="font-size: 0.85rem; color: #6b7280; margin: 0.3rem 0;">${update.date}</div>
+                <div style="font-size: 0.95rem; margin-top: 0.5rem;">${update.content}</div>
+            `;
+            updatesList.appendChild(div);
+        });
+    }
     
     // Carregar apoiadores
     const supportersList = document.getElementById('supporters-list');
@@ -530,6 +657,23 @@ function loadCampaignDetails() {
                 <div class="supporter-date">${new Date(supporter.date).toLocaleDateString('pt-BR')}</div>
             `;
             supportersList.appendChild(div);
+        });
+    }
+    
+    // Carregar comentários
+    const comments = sampleComments[campaign.id] || [];
+    if (comments.length > 0) {
+        const commentsList = document.getElementById('commentsList');
+        commentsList.innerHTML = '';
+        comments.forEach(comment => {
+            const div = document.createElement('div');
+            div.style.cssText = 'background: #f9fafb; padding: 1rem; border-radius: 0.5rem; border-left: 4px solid #7c3aed;';
+            div.innerHTML = `
+                <div style="font-weight: bold; color: #1f2937;">${comment.author}</div>
+                <div style="font-size: 0.85rem; color: #9ca3af; margin: 0.3rem 0;">${comment.date} • ${comment.helpful} pessoas acharam útil</div>
+                <div style="color: #374151; margin-top: 0.5rem;">${comment.text}</div>
+            `;
+            commentsList.appendChild(div);
         });
     }
 }
