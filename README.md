@@ -103,7 +103,7 @@ O site usa **localStorage** do navegador para armazenar:
 ## 📁 Estrutura de Arquivos
 
 ```
-VaquinhaHub/
+Vakinha.vk/
 ├── index.html          # Página inicial
 ├── campanhas.html      # Listagem de campanhas
 ├── criar.html          # Formulário para criar vaquinha

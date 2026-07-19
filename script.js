@@ -26,7 +26,7 @@ const sampleCampaigns = [
         createdDate: "2024-07-12",
         deadline: "2024-08-25",
         image: "saude",
-        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#e8f4f8" width="400" height="300"/><circle cx="200" cy="100" r="50" fill="#fdbf5c"/><path d="M150 160 Q200 140 250 160" fill="#ff6b6b" stroke="#ff6b6b" stroke-width="2"/><rect x="160" y="180" width="80" height="100" fill="#4a90e2"/><rect x="170" y="190" width="60" height="60" fill="#7dd3c0" rx="5"/><circle cx="180" cy="120" r="8" fill="#333"/><circle cx="220" cy="120" r="8" fill="#333"/><circle cx="200" cy="135" r="4" fill="#333"/></svg>',
+        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#fff5f7" width="400" height="300"/><rect x="60" y="80" width="280" height="140" fill="#fff" stroke="#e0e0e0" stroke-width="2" rx="10"/><circle cx="120" cy="130" r="35" fill="#f4a460"/><path d="M100 150 Q120 165 140 155" fill="#fdbcb4" stroke="#fdbcb4" stroke-width="2"/><circle cx="140" cy="120" r="5" fill="#333"/><circle cx="150" cy="120" r="5" fill="#333"/><path d="M160 180 L160 240 M180 185 L180 240" stroke="#7dd3c0" stroke-width="8"/><path d="M140 220 Q160 215 180 220" stroke="#666" stroke-width="3" fill="none"/><g fill="#27ae60"><polygon points="260,140 280,120 290,145 275,155"/><polygon points="300,160 315,150 320,170 310,175"/><text x="310" y="135" font-size="20">✓</text></g></svg>',
         supporters: [
             { name: "Francisco Costa", amount: 500, date: "2024-07-19" },
             { name: "Anônimo", amount: 250, date: "2024-07-19" },
@@ -62,7 +62,7 @@ const sampleCampaigns = [
         createdDate: "2024-07-08",
         deadline: "2024-08-30",
         image: "educacao",
-        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#f0e8ff" width="400" height="300"/><rect x="80" y="80" width="240" height="140" fill="#4ecdc4" rx="10"/><circle cx="200" cy="110" r="35" fill="#fdbf5c"/><path d="M160 160 Q200 140 240 160" fill="#fff" stroke="#fff" stroke-width="2"/><circle cx="120" cy="220" r="15" fill="#e8d5ff"/><circle cx="200" cy="220" r="15" fill="#e8d5ff"/><circle cx="280" cy="220" r="15" fill="#e8d5ff"/><text x="200" y="250" font-size="24" text-anchor="middle" fill="#333">ENEM</text></svg>',
+        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#f0e8ff" width="400" height="300"/><g><circle cx="200" cy="90" r="35" fill="#f4a460"/><circle cx="185" cy="80" r="5" fill="#333"/><circle cx="215" cy="80" r="5" fill="#333"/><path d="M190 100 Q200 110 210 100" fill="#fdbcb4"/></g><polygon points="200,50 170,70 230,70" fill="#4ecdc4" stroke="#2c5aa0" stroke-width="2"/><rect x="185" y="65" width="30" height="35" fill="#2c5aa0" stroke="#2c5aa0" stroke-width="1"/><g fill="#fff" font-weight="bold"><text x="200" y="87" font-size="16" text-anchor="middle">ENEM</text></g><path d="M150 150 L150 230 M250 150 L250 230 M160 160 L240 160 M160 190 L240 190 M160 220 L240 220" stroke="#4ecdc4" stroke-width="3" fill="none" opacity="0.5"/><rect x="160" y="155" width="80" height="30" fill="#e8d5ff" stroke="#4ecdc4" stroke-width="2" rx="3"/><text x="200" y="175" font-size="12" text-anchor="middle" fill="#2c5aa0">Aprovado!</text><text x="200" y="270" font-size="16" text-anchor="middle" fill="#4ecdc4" font-weight="bold">BOLSA DE ESTUDOS</text></svg>',
         supporters: [
             { name: "Professora Andréia", amount: 300, date: "2024-07-19" },
             { name: "Anônimo", amount: 150, date: "2024-07-18" },
@@ -98,7 +98,7 @@ const sampleCampaigns = [
         createdDate: "2024-06-28",
         deadline: "2024-09-15",
         image: "moradia",
-        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#fff8e1" width="400" height="300"/><polygon points="100,180 200,80 300,180" fill="#d4a574"/><rect x="90" y="180" width="220" height="100" fill="#a0826d"/><rect x="130" y="210" width="50" height="50" fill="#7a6b60"/><rect x="220" y="210" width="50" height="50" fill="#7a6b60"/><polygon points="170,160 230,160 200,120" fill="#c70000" opacity="0.7"/><circle cx="155" cy="230" r="8" fill="#333"/><circle cx="245" cy="230" r="8" fill="#333"/><path d="M200 180 L200 240" stroke="#333" stroke-width="2"/><path d="M170 210 L170 260" stroke="#333" stroke-width="2"/><path d="M230 210 L230 260" stroke="#333" stroke-width="2"/></svg>',
+        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#e8d7c3" width="400" height="300"/><polygon points="100,180 200,70 300,180" fill="#8b6f47" opacity="0.8"/><path d="M95 185 Q100 150 105 120 L100 180 Z" fill="#c70000" opacity="0.6" stroke="#8b0000" stroke-width="2"/><rect x="85" y="185" width="230" height="95" fill="#a0826d"/><rect x="110" y="210" width="45" height="50" fill="#5c4a3d"/><rect x="165" y="210" width="45" height="50" fill="#5c4a3d"/><rect x="220" y="210" width="45" height="50" fill="#5c4a3d"/><path d="M200 185 L200 235" stroke="#d4a574" stroke-width="3"/><path d="M150 190 L160 200 M160 200 L150 210" stroke="#666" stroke-width="2"/><path d="M250 190 L260 200 M260 200 L250 210" stroke="#666" stroke-width="2"/><text x="200" y="270" font-size="16" text-anchor="middle" fill="#c70000" font-weight="bold">⚠ URGENTE</text></svg>',
         supporters: [
             { name: "Vizinho Pedro", amount: 800, date: "2024-07-19" },
             { name: "Anônimo", amount: 500, date: "2024-07-19" },
@@ -134,7 +134,7 @@ const sampleCampaigns = [
         createdDate: "2024-07-02",
         deadline: "2024-08-28",
         image: "emergencia",
-        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#ffe8e8" width="400" height="300"/><rect x="80" y="60" width="240" height="180" fill="#e74c3c" rx="15"/><circle cx="200" cy="150" r="60" fill="#fff" stroke="#e74c3c" stroke-width="3"/><circle cx="200" cy="150" r="45" fill="#e74c3c"/><rect x="195" y="120" width="10" height="60" fill="#fff"/><rect x="170" y="145" width="60" height="10" fill="#fff"/><rect x="160" y="240" width="80" height="25" fill="#ff6b6b" rx="5"/><text x="200" y="258" font-size="16" text-anchor="middle" fill="white">EMERGÊNCIA</text></svg>',
+        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#ffe8e8" width="400" height="300"/><g><rect x="80" y="60" width="120" height="140" fill="#e8e8e8" stroke="#666" stroke-width="2" rx="8"/><rect x="90" y="75" width="100" height="50" fill="#4a90e2"/><circle cx="140" cy="110" r="8" fill="#fff"/><rect x="95" y="130" width="90" height="20" fill="#f39c12"/><circle cx="105" cy="140" r="4" fill="#333"/><circle cx="125" cy="140" r="4" fill="#333"/><circle cx="145" cy="140" r="4" fill="#333"/><circle cx="165" cy="140" r="4" fill="#333"/><text x="140" y="165" font-size="12" text-anchor="middle" fill="#333">DESFIBRILADOR</text></g><g><rect x="220" y="80" width="100" height="120" fill="#f5f5f5" stroke="#999" stroke-width="2" rx="10"/><circle cx="270" cy="100" r="20" fill="#9b59b6" opacity="0.3"/><circle cx="270" cy="100" r="15" fill="#fff" stroke="#9b59b6" stroke-width="2"/><circle cx="265" cy="98" r="3" fill="#9b59b6"/><circle cx="275" cy="98" r="3" fill="#9b59b6"/><path d="M270 105 Q268 112 270 118" stroke="#9b59b6" stroke-width="2" fill="none"/><text x="270" y="160" font-size="11" text-anchor="middle" fill="#333">PRÓTESE</text></g><text x="200" y="270" font-size="14" text-anchor="middle" fill="#e74c3c" font-weight="bold">Equipamentos Médicos Essenciais</text></svg>',
         supporters: [
             { name: "Prefeitura Municipal", amount: 2000, date: "2024-07-19" },
             { name: "Anônimo", amount: 500, date: "2024-07-19" },
@@ -159,42 +159,6 @@ const sampleCampaigns = [
         ]
     },
     {
-        id: 5,
-        title: "Desenvolvimento de App - Assistente para Pessoas com Deficiência Visual",
-        description: "Somos um time de 4 desenvolvedores (Ana, Lucas, Beatriz e Rafael) com paixão por tecnologia acessível. Estamos criando um app inovador que ajuda pessoas com deficiência visual a navegarem pela cidade, reconhecer objetos, ler textos e interagir com tecnologia de forma autônoma usando inteligência artificial. O app já tem versão beta testada com 50 usuários que confirmaram que mudou suas vidas. Precisamos de R$ 25 mil para finalizar o desenvolvimento, fazer testes em mais de 500 pessoas e lançar na App Store e Google Play. O objetivo é tornar a tecnologia acessível para todos.",
-        targetAmount: 25000,
-        currentAmount: 18750,
-        category: "negocios",
-        organizer: "Tech Accessibility Team",
-        email: "hello@techaccessibility.com",
-        createdDate: "2024-06-15",
-        deadline: "2024-09-30",
-        image: "negocios",
-        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#e8f5ff" width="400" height="300"/><rect x="100" y="80" width="200" height="160" fill="#3498db" rx="20"/><path d="M150 130 L150 200 M150 130 L200 100 M200 100 L250 150 M250 150 L200 130" stroke="#fff" stroke-width="3" fill="none"/><circle cx="200" cy="100" r="6" fill="#fff"/><circle cx="250" cy="150" r="6" fill="#fff"/><rect x="120" y="220" width="30" height="30" fill="#27ae60" rx="5"/><rect x="175" y="220" width="30" height="30" fill="#f39c12" rx="5"/><rect x="230" y="220" width="30" height="30" fill="#e74c3c" rx="5"/></svg>',
-        supporters: [
-            { name: "Google Brasil", amount: 5000, date: "2024-07-19" },
-            { name: "Anônimo", amount: 1000, date: "2024-07-19" },
-            { name: "Fundação TI", amount: 3000, date: "2024-07-18" },
-            { name: "Programador Voluntário", amount: 500, date: "2024-07-18" },
-            { name: "Microsoft Innovation", amount: 2500, date: "2024-07-17" },
-            { name: "Anônimo", amount: 750, date: "2024-07-17" },
-            { name: "ONG Inclusão Digital", amount: 2000, date: "2024-07-16" },
-            { name: "Usuário do App", amount: 300, date: "2024-07-16" },
-            { name: "Investidor Anjo", amount: 1500, date: "2024-07-15" },
-            { name: "Anônimo", amount: 200, date: "2024-07-15" },
-            { name: "Empresa de Tecnologia", amount: 1000, date: "2024-07-14" },
-            { name: "Professor Universitário", amount: 100, date: "2024-07-14" },
-            { name: "Anônimo", amount: 250, date: "2024-07-13" },
-            { name: "Dev Freelancer", amount: 350, date: "2024-07-13" },
-            { name: "Pessoa com Deficiência", amount: 150, date: "2024-07-12" },
-            { name: "Anônimo", amount: 400, date: "2024-07-12" },
-            { name: "Startup Aceleradora", amount: 800, date: "2024-07-11" },
-            { name: "Tech Enthusiast", amount: 250, date: "2024-07-11" },
-            { name: "Anônimo", amount: 180, date: "2024-07-10" },
-            { name: "Empresário Social", amount: 500, date: "2024-07-10" }
-        ]
-    },
-    {
         id: 6,
         title: "Viagem para Intercâmbio - Programa de Idioma na Irlanda",
         description: "Meu nome é Sofia e sempre sonhei em fazer um intercâmbio para aperfeiçoar meu inglês e crescer profissionalmente. Consegui passar na seleção de um programa renomado de intercâmbio na Irlanda pelo período de 6 meses. O programa inclui aulas intensivas de inglês, hospedagem em casa de família e experiência cultural única. O custo total é R$ 18 mil (passagem, programa, hospedagem e documentação). Meus pais trabalham muito mas não conseguem arcar com essa despesa sozinhos. Sou aluna dedicada e essa oportunidade vai transformar meu futuro profissional.",
@@ -206,7 +170,7 @@ const sampleCampaigns = [
         createdDate: "2024-07-10",
         deadline: "2024-08-20",
         image: "viagem",
-        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#fff3e0" width="400" height="300"/><polygon points="200,40 80,150 320,150" fill="#f39c12"/><rect x="190" y="150" width="20" height="120" fill="#95a5a6"/><circle cx="140" cy="100" r="15" fill="#3498db" opacity="0.7"/><circle cx="260" cy="80" r="12" fill="#e74c3c" opacity="0.7"/><path d="M50 180 Q200 160 350 180" stroke="#e8daef" stroke-width="3" fill="none" opacity="0.5"/><text x="200" y="260" font-size="20" text-anchor="middle" fill="#f39c12" font-weight="bold">IRLANDA</text></svg>',
+        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#fff3e0" width="400" height="300"/><g fill="#f39c12" opacity="0.9"><rect x="140" y="20" width="120" height="120" rx="8"/></g><circle cx="170" cy="80" r="35" fill="#f4a460"/><path d="M160 100 Q170 115 180 110" fill="#fdbcb4"/><circle cx="160" cy="70" r="4" fill="#333"/><circle cx="180" cy="70" r="4" fill="#333"/><path d="M150 140 L150 180 M190 140 L190 180 M160 180 L160 200 M180 180 L180 200" stroke="#4ecdc4" stroke-width="6"/><g fill="#27ae60"><rect x="80" y="160" width="50" height="80"/><polygon points="105,160 95,140 115,140"/></g><g fill="#c70000"><polygon points="200,160 220,140 240,160"/></g><text x="200" y="270" font-size="16" text-anchor="middle" fill="#f39c12" font-weight="bold">INTERCÂMBIO INTERNACIONAL</text></svg>',
         supporters: [
             { name: "Avó Filomena", amount: 2000, date: "2024-07-19" },
             { name: "Anônimo", amount: 500, date: "2024-07-18" },
@@ -226,7 +190,7 @@ const sampleCampaigns = [
         ]
     },
     {
-        id: 7,
+        id: 5,
         title: "Prótese Auditiva - Recuperando a Audição aos 62 Anos",
         description: "Meu nome é Joaquim e aos 62 anos estou com dificuldade auditiva severa nos dois ouvidos. Isso me afastou do trabalho e prejudicou muito minha qualidade de vida e relacionamentos. Um otorrinolaringologista recomendou uma prótese auditiva digital de última geração que custa R$ 12 mil o par. Tenho aposentadoria pequena e essa é uma despesa que não consegui economizar. Quero voltar a ouvir meus netos, conversar com minha esposa e retomar minha participação na comunidade.",
         targetAmount: 12000,
@@ -237,7 +201,7 @@ const sampleCampaigns = [
         createdDate: "2024-07-05",
         deadline: "2024-09-05",
         image: "saude",
-        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#f3e5f5" width="400" height="300"/><circle cx="200" cy="150" r="70" fill="#ff6b6b" opacity="0.9"/><g fill="white"><circle cx="200" cy="150" r="50"/><circle cx="200" cy="150" r="35" fill="#ff6b6b"/><path d="M185 135 Q200 125 215 135" stroke="white" stroke-width="3" fill="none"/><path d="M180 155 Q200 170 220 155" stroke="white" stroke-width="3" fill="none"/></g><path d="M150 100 Q140 90 130 100" stroke="#2c3e50" stroke-width="3" fill="none"/><path d="M250 100 Q260 90 270 100" stroke="#2c3e50" stroke-width="3" fill="none"/><text x="200" y="260" font-size="18" text-anchor="middle" fill="#9b59b6">AUDIÇÃO</text></svg>',
+        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#f3e5f5" width="400" height="300"/><circle cx="200" cy="120" r="40" fill="#f4a460"/><circle cx="180" cy="115" r="5" fill="#333"/><circle cx="220" cy="115" r="5" fill="#333"/><path d="M190 135 Q200 140 210 135" fill="none" stroke="#333" stroke-width="2"/><g fill="#ff6b6b"><path d="M150 160 L140 180 L150 200 L170 180 Z"/><path d="M250 160 L260 180 L250 200 L230 180 Z"/><path d="M140 185 Q200 195 260 185" stroke="#9b59b6" stroke-width="4" fill="none"/></g><path d="M160 200 L160 250" stroke="#9b59b6" stroke-width="5"/><path d="M240 200 L240 250" stroke="#9b59b6" stroke-width="5"/><g fill="#9b59b6" opacity="0.3"><circle cx="160" cy="230" r="12"/><circle cx="240" cy="230" r="12"/></g><text x="200" y="275" font-size="16" text-anchor="middle" fill="#9b59b6" font-weight="bold">PRÓTESE AUDITIVA</text></svg>',
         supporters: [
             { name: "Filha Marisa", amount: 1500, date: "2024-07-19" },
             { name: "Anônimo", amount: 200, date: "2024-07-18" },
@@ -257,7 +221,7 @@ const sampleCampaigns = [
         ]
     },
     {
-        id: 8,
+        id: 7,
         title: "Projeto Social - Oficinas de Arte para Crianças em Comunidade Carente",
         description: "Somos uma ONG que trabalha há 8 anos com crianças em situação de risco em uma favela da zona norte. Queremos expandir nosso programa de oficinas de arte (pintura, escultura, cerâmica, fotografia) para atender 200 crianças de 7 a 16 anos. As oficinas retiram as crianças das ruas e as dão esperança através da criatividade. Precisamos de R$ 15 mil para comprar materiais, alugar um espaço maior e pagar 2 professores de arte em período integral por 12 meses.",
         targetAmount: 15000,
@@ -268,7 +232,7 @@ const sampleCampaigns = [
         createdDate: "2024-07-03",
         deadline: "2024-09-20",
         image: "outro",
-        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#fce4ec" width="400" height="300"/><rect x="60" y="80" width="280" height="180" fill="#e8d5ff" rx="10" stroke="#9b59b6" stroke-width="2"/><circle cx="100" cy="140" r="20" fill="#ff6b6b"/><circle cx="160" cy="120" r="20" fill="#f39c12"/><circle cx="220" cy="140" r="20" fill="#4ecdc4"/><circle cx="280" cy="130" r="20" fill="#27ae60"/><circle cx="130" cy="200" r="20" fill="#3498db"/><circle cx="200" cy="220" r="20" fill="#e74c3c"/><circle cx="270" cy="200" r="20" fill="#2c3e50"/><g fill="white" font-size="12"><text x="100" y="147">♪</text><text x="160" y="127">✎</text><text x="220" y="147">🎨</text><text x="280" y="137">✨</text></g><text x="200" y="270" font-size="18" text-anchor="middle" fill="#9b59b6" font-weight="bold">CORES DO AMANHÃ</text></svg>',
+        photo: '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect fill="#fce4ec" width="400" height="300"/><g><circle cx="80" cy="100" r="25" fill="#ff6b6b"/><text x="80" y="108" font-size="20" text-anchor="middle" fill="white">♪</text></g><g><circle cx="160" cy="80" r="25" fill="#f39c12"/><text x="160" y="88" font-size="20" text-anchor="middle" fill="white">✏</text></g><g><circle cx="240" cy="100" r="25" fill="#4ecdc4"/><text x="240" y="108" font-size="20" text-anchor="middle" fill="white">🎨</text></g><g><circle cx="320" cy="85" r="25" fill="#27ae60"/><text x="320" y="93" font-size="20" text-anchor="middle" fill="white">✨</text></g><rect x="60" y="140" width="280" height="120" fill="#e8d5ff" stroke="#9b59b6" stroke-width="3" rx="10"/><g fill="white" font-size="14" text-anchor="middle"><text x="100" y="190">Pintura</text><text x="200" y="190">Escultura</text><text x="300" y="190">Cerâmica</text><text x="100" y="220">Fotografia</text><text x="200" y="220">Artes Cênicas</text><text x="300" y="220">Criatividade</text></g><text x="200" y="280" font-size="16" text-anchor="middle" fill="#9b59b6" font-weight="bold">OFICINAS COMUNITÁRIAS</text></svg>',
         supporters: [
             { name: "Fundação Bradesco", amount: 3000, date: "2024-07-19" },
             { name: "Anônimo", amount: 500, date: "2024-07-19" },
