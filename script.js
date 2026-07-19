@@ -1,6 +1,17 @@
 // Dados das campanhas (simulado com localStorage)
 const STORAGE_KEY = 'vaquinhas_campaigns';
 
+// SVGs para cada categoria
+const categoryIcons = {
+    saude: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect fill="#ff6b6b" width="100" height="100"/><g fill="white"><path d="M50 20c-16.5 0-30 13.5-30 30s13.5 30 30 30 30-13.5 30-30-13.5-30-30-30zm0 50c-11 0-20-9-20-20s9-20 20-20 20 9 20 20-9 20-20 20z"/><rect x="47" y="35" width="6" height="30" fill="white"/><rect x="35" y="47" width="30" height="6" fill="white"/></g></svg>',
+    educacao: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect fill="#4ecdc4" width="100" height="100"/><g fill="white"><path d="M50 20l-30 15v20c0 15 30 25 30 25s30-10 30-25V35l-30-15z"/><path d="M50 40l20 10v15c0 8-20 15-20 15s-20-7-20-15V50l20-10z"/></g></svg>',
+    moradia: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect fill="#95a3a6" width="100" height="100"/><g fill="white"><path d="M50 20l-35 25v50h70V45L50 20z"/><rect x="30" y="55" width="12" height="15" fill="white"/><rect x="58" y="55" width="12" height="15" fill="white"/><polygon points="45,30 55,30 50,25" fill="white"/></g></svg>',
+    emergencia: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect fill="#e74c3c" width="100" height="100"/><g fill="white"><path d="M50 15c-19.3 0-35 15.7-35 35s15.7 35 35 35 35-15.7 35-35-15.7-35-35-35zm0 60c-13.8 0-25-11.2-25-25s11.2-25 25-25 25 11.2 25 25-11.2 25-25 25z"/><circle cx="50" cy="50" r="15" fill="#e74c3c"/><rect x="48" y="40" width="4" height="20" fill="white"/><rect x="40" y="48" width="20" height="4" fill="white"/></g></svg>',
+    negocios: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect fill="#3498db" width="100" height="100"/><g fill="white"><path d="M25 45h15v30H25zm30-10h15v40H55zm30-5h15v45H85z"/><line x1="20" y1="75" x2="80" y2="75" stroke="white" stroke-width="2"/></g></svg>',
+    viagem: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect fill="#f39c12" width="100" height="100"/><g fill="white"><path d="M30 50c0-8.3 6.7-15 15-15h10c8.3 0 15 6.7 15 15v20H30V50z"/><polygon points="35,45 45,30 55,45"/><path d="M65 60h10v15H65z"/></g></svg>',
+    outro: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect fill="#9b59b6" width="100" height="100"/><g fill="white"><circle cx="50" cy="50" r="25"/><circle cx="50" cy="50" r="20" fill="#9b59b6"/><circle cx="40" cy="40" r="3" fill="white"/><circle cx="60" cy="40" r="3" fill="white"/><path d="M40 55 Q50 65 60 55" stroke="white" stroke-width="2" fill="none"/></g></svg>'
+};
+
 // Campanhas de exemplo
 const sampleCampaigns = [
     {
@@ -14,7 +25,7 @@ const sampleCampaigns = [
         email: "maria@email.com",
         createdDate: "2024-07-15",
         deadline: "2024-08-15",
-        image: "🏥",
+        image: "saude",
         supporters: [
             { name: "Anônimo", amount: 500, date: "2024-07-18" },
             { name: "João", amount: 200, date: "2024-07-17" },
@@ -32,7 +43,7 @@ const sampleCampaigns = [
         email: "carlos@email.com",
         createdDate: "2024-07-10",
         deadline: "2024-08-10",
-        image: "📚",
+        image: "educacao",
         supporters: [
             { name: "Tia Ana", amount: 300, date: "2024-07-17" },
             { name: "Anônimo", amount: 700, date: "2024-07-15" }
@@ -49,7 +60,7 @@ const sampleCampaigns = [
         email: "rosana@email.com",
         createdDate: "2024-07-05",
         deadline: "2024-09-05",
-        image: "🏠",
+        image: "moradia",
         supporters: [
             { name: "Vizinho Pedro", amount: 500, date: "2024-07-16" },
             { name: "Anônimo", amount: 2000, date: "2024-07-14" }
@@ -66,7 +77,7 @@ const sampleCampaigns = [
         email: "dr.roberto@email.com",
         createdDate: "2024-07-08",
         deadline: "2024-08-20",
-        image: "🚑",
+        image: "emergencia",
         supporters: [
             { name: "Anônimo", amount: 1000, date: "2024-07-17" },
             { name: "Paciente", amount: 500, date: "2024-07-16" }
@@ -83,7 +94,7 @@ const sampleCampaigns = [
         email: "tech@email.com",
         createdDate: "2024-07-12",
         deadline: "2024-09-12",
-        image: "💻",
+        image: "negocios",
         supporters: [
             { name: "Investidor", amount: 5000, date: "2024-07-17" },
             { name: "Anônimo", amount: 2000, date: "2024-07-15" }
@@ -175,8 +186,10 @@ function createCampaignCard(campaign) {
         window.location.href = `detalhes.html?id=${campaign.id}`;
     };
     
+    const svgIcon = categoryIcons[campaign.category] || categoryIcons.outro;
+    
     card.innerHTML = `
-        <div class="campaign-image">${campaign.image}</div>
+        <div class="campaign-image">${svgIcon}</div>
         <div class="campaign-body">
             <h3 class="campaign-title">${campaign.title}</h3>
             <p class="campaign-description">${campaign.description.substring(0, 80)}...</p>
@@ -275,15 +288,17 @@ function filterCampaigns() {
 function handleCreateCampaign(e) {
     e.preventDefault();
     
+    const category = document.getElementById('category').value;
+    
     const formData = {
         title: document.getElementById('title').value,
         description: document.getElementById('description').value,
         targetAmount: parseFloat(document.getElementById('targetAmount').value),
         deadline: document.getElementById('deadline').value,
-        category: document.getElementById('category').value,
+        category: category,
         organizer: document.getElementById('organizer').value,
         email: document.getElementById('email').value,
-        image: '💰',
+        image: category,
         createdDate: new Date().toISOString().split('T')[0]
     };
     
@@ -316,10 +331,15 @@ function loadCampaignDetails() {
     
     // Preencher informações
     document.getElementById('campaignTitle').textContent = campaign.title;
-    document.getElementById('campaignImage').textContent = campaign.image;
-    document.getElementById('campaignImage').style.fontSize = '4rem';
-    document.getElementById('campaignImage').style.background = 'linear-gradient(135deg, #7c3aed, #06b6d4)';
-    document.getElementById('campaignImage').style.color = 'white';
+    
+    // Adicionar SVG como imagem
+    const svgIcon = categoryIcons[campaign.category] || categoryIcons.outro;
+    const campaignImageElement = document.getElementById('campaignImage');
+    campaignImageElement.innerHTML = svgIcon;
+    campaignImageElement.style.width = '100%';
+    campaignImageElement.style.minHeight = '300px';
+    campaignImageElement.style.borderRadius = '1rem';
+    
     document.getElementById('campaignDescription').textContent = campaign.description;
     document.getElementById('campaignCategory').textContent = categoryNames[campaign.category];
     document.getElementById('campaignOrganizer').textContent = `por ${campaign.organizer}`;

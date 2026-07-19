@@ -1,4 +1,4 @@
-# 💰 VaquinhaHub - Plataforma de Crowdfunding
+# � Vakinha - Plataforma de Crowdfunding
 
 Um site completo e moderno para criar e gerenciar campanhas de arrecadação de fundos online (vaquinhas).
 
@@ -173,6 +173,6 @@ Para dúvidas ou sugestões, entre em contato através do email na página de co
 
 ---
 
-**VaquinhaHub** - Realizando sonhos através da comunidade! 💜
+**Vakinha** - Realizando sonhos através da comunidade! 💜
 
 Versão 1.0 - 2024
