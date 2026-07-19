@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campanhas - VaquinhaHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html" class="logo">💰 VaquinhaHub</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="campanhas.html" class="active">Campanhas</a></li>
+                <li><a href="criar.html" class="btn-criar">+ Criar Vaquinha</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="campaigns-section">
+        <div class="container">
+            <h1>Todas as Campanhas</h1>
+            
+            <div class="filters">
+                <input type="text" id="searchInput" placeholder="Buscar campanhas..." class="search-box">
+                <select id="categoryFilter" class="filter-select">
+                    <option value="">Todas as Categorias</option>
+                    <option value="saude">Saúde</option>
+                    <option value="educacao">Educação</option>
+                    <option value="moradia">Moradia</option>
+                    <option value="emergencia">Emergência</option>
+                    <option value="negocios">Negócios</option>
+                    <option value="viagem">Viagem</option>
+                    <option value="outro">Outro</option>
+                </select>
+                <select id="sortFilter" class="filter-select">
+                    <option value="recentes">Mais Recentes</option>
+                    <option value="populares">Mais Populares</option>
+                    <option value="proximas">Próximas do Objetivo</option>
+                </select>
+            </div>
+
+            <div class="campaigns-grid" id="allCampaigns">
+                <!-- Campanhas serão carregadas aqui -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VaquinhaHub. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        loadAllCampaigns();
+        
+        document.getElementById('searchInput').addEventListener('input', filterCampaigns);
+        document.getElementById('categoryFilter').addEventListener('change', filterCampaigns);
+        document.getElementById('sortFilter').addEventListener('change', filterCampaigns);
+    </script>
+</body>
+</html>

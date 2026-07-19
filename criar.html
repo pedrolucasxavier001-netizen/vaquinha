@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Vaquinha - VaquinhaHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html" class="logo">💰 VaquinhaHub</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="campanhas.html">Campanhas</a></li>
+                <li><a href="criar.html" class="active btn-criar">+ Criar Vaquinha</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="create-section">
+        <div class="container">
+            <h1>Crie sua Vaquinha</h1>
+            <p class="subtitle">Compartilhe sua história e arrecade fundos para seu projeto</p>
+
+            <form id="createForm" class="create-form">
+                <div class="form-group">
+                    <label for="title">Título da Vaquinha *</label>
+                    <input type="text" id="title" name="title" required placeholder="Ex: Ajuda para tratamento médico">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Descrição Detalhada *</label>
+                    <textarea id="description" name="description" required placeholder="Conte sua história em detalhes..." rows="6"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="targetAmount">Valor Alvo (R$) *</label>
+                        <input type="number" id="targetAmount" name="targetAmount" required min="100" step="0.01" placeholder="Ex: 5000">
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Data Limite *</label>
+                        <input type="date" id="deadline" name="deadline" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category">Categoria *</label>
+                        <select id="category" name="category" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="saude">Saúde</option>
+                            <option value="educacao">Educação</option>
+                            <option value="moradia">Moradia</option>
+                            <option value="emergencia">Emergência</option>
+                            <option value="negocios">Negócios</option>
+                            <option value="viagem">Viagem</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Imagem da Vaquinha</label>
+                        <input type="file" id="image" name="image" accept="image/*">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="organizer">Nome do Organizador *</label>
+                    <input type="text" id="organizer" name="organizer" required placeholder="Seu nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email de Contato *</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Concordo com os Termos de Serviço e Política de Privacidade</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Criar Vaquinha</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VaquinhaHub. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('createForm').addEventListener('submit', handleCreateCampaign);
+        
+        // Definir data mínima como hoje
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('deadline').setAttribute('min', today);
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Vaquinha - VaquinhaHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html" class="logo">💰 VaquinhaHub</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="campanhas.html">Campanhas</a></li>
+                <li><a href="criar.html" class="btn-criar">+ Criar Vaquinha</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="campaign-detail">
+        <div class="container">
+            <div class="campaign-header">
+                <img id="campaignImage" src="" alt="Imagem da Vaquinha" class="campaign-image-large">
+                <div class="campaign-info">
+                    <h1 id="campaignTitle"></h1>
+                    <div class="campaign-meta">
+                        <span id="campaignCategory" class="badge"></span>
+                        <span id="campaignOrganizer" class="organizer"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="campaign-content">
+                <div class="main-content">
+                    <h2>Sobre esta Vaquinha</h2>
+                    <p id="campaignDescription"></p>
+
+                    <h2>Progresso da Arrecadação</h2>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                        <div class="progress-info">
+                            <span class="current-amount">R$ <span id="currentAmount">0</span></span>
+                            <span class="target-amount">de R$ <span id="targetAmount">0</span></span>
+                        </div>
+                        <div class="progress-stats">
+                            <div class="stat">
+                                <strong id="percentage">0</strong>%
+                                <p>Arrecadado</p>
+                            </div>
+                            <div class="stat">
+                                <strong id="daysLeft">0</strong>
+                                <p>Dias Restantes</p>
+                            </div>
+                            <div class="stat">
+                                <strong id="supporters">0</strong>
+                                <p>Apoiadores</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Apoie esta Vaquinha</h2>
+                    <div class="donation-form">
+                        <div class="quick-amounts">
+                            <button class="quick-btn" onclick="setDonationAmount(50)">R$ 50</button>
+                            <button class="quick-btn" onclick="setDonationAmount(100)">R$ 100</button>
+                            <button class="quick-btn" onclick="setDonationAmount(500)">R$ 500</button>
+                            <button class="quick-btn" onclick="setDonationAmount(1000)">R$ 1000</button>
+                        </div>
+                        <div class="custom-donation">
+                            <input type="number" id="customAmount" placeholder="Outro valor" min="1" step="0.01">
+                            <button class="btn btn-primary" onclick="submitDonation()">Apoiar Agora</button>
+                        </div>
+                    </div>
+
+                    <h2>Últimos Apoiadores</h2>
+                    <div id="supporters-list" class="supporters-list">
+                        <!-- Apoiadores serão listados aqui -->
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>Informações</h3>
+                        <div class="info-item">
+                            <strong>Data de Término:</strong>
+                            <p id="deadlineDate"></p>
+                        </div>
+                        <div class="info-item">
+                            <strong>Criador:</strong>
+                            <p id="creatorName"></p>
+                        </div>
+                        <div class="info-item">
+                            <strong>Categoria:</strong>
+                            <p id="categoryName"></p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Compartilhe</h3>
+                        <div class="share-buttons">
+                            <button class="share-btn" onclick="shareOn('facebook')">Facebook</button>
+                            <button class="share-btn" onclick="shareOn('whatsapp')">WhatsApp</button>
+                            <button class="share-btn" onclick="shareOn('twitter')">Twitter</button>
+                            <button class="share-btn" onclick="copyLink()">Copiar Link</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>✅ Apoio Registrado com Sucesso!</h2>
+            <p>Muito obrigado por apoiar esta campanha. Você receberá atualizações por email.</p>
+            <button class="btn btn-primary" onclick="closeModal()">Fechar</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VaquinhaHub. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        loadCampaignDetails();
+    </script>
+</body>
+</html>
